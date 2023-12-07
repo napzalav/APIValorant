@@ -1,4 +1,3 @@
-
 // * DOM Selector
 const containerCards = document.getElementById('containerCards');
 
