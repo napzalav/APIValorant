@@ -11,15 +11,14 @@ const personajesJugables = data.filter(
 const nuevoPersonaje = personajesJugables.map((personaje) => {
   let agente = {};
   agente.name = personaje.displayName;
+  agente._id = personaje.uuid;
   agente.description = personaje.description;
   agente.smallImage = personaje.displayIconSmall;
   agente.portrait = personaje.fullPortrait;
   agente.background = personaje.background;
   agente.role = personaje.role.displayName;
   agente.role_description = personaje.role.description;
-
-  agente._id = personaje.uuid;
-  agente.abilities = personaje.abilities;
+  //   agente.abilities_name = personaje.abilities.displayName;
 
   return agente;
 });
@@ -55,8 +54,15 @@ function crearCard(personaje, contenedor) {
     return;
   }
 
-  const { name, description, portrait, background, role, role_description, abilities } =
-    personaje;
+  const {
+    name,
+    description,
+    portrait,
+    background,
+    role,
+    role_description,
+    // abilities_name,
+  } = personaje;
 
   contenedor.innerHTML = `
     <div class="card mb-3 generated-card bg-danger" style="min-width: 540px;">
@@ -71,8 +77,9 @@ function crearCard(personaje, contenedor) {
                 <div class="card-body">
                     <h1 class="card-title">${name}</h1>
                     <h5 class="card-subtitle">Rol: ${role}</h5>
-                    <p class="card-text">${role_description}</p>
+                    <p class="card-text"><i>${role_description}</i></p>
                     <p class="card-text">${description}</p>
+                    
                     
                 </div>
             </div>
