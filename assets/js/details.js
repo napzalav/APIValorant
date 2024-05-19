@@ -78,7 +78,7 @@ function crearCard(personaje, contenedor) {
                     <h1 class="card-title">${name}</h1>
                     <h5 class="card-subtitle">Rol: ${role}</h5>
                     <p class="card-text"><i>${role_description}</i></p>
-                    <p class="card-text">${description}</p>                    
+                    <p class="card-text">${description}</p>
                 </div>
             </div>
         </div>
